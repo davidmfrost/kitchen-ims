@@ -1,24 +1,24 @@
 'use strict'
 
 class InventoryController {
-  index() {
-    return 'This is the inventory page'
+  index({view}) {
+    return view.render('admin/inventory/all')
   }
 
   store() {
 
   }
 
-  create() {
-
+  create({view}) {
+    return view.render('admin/inventory/create')
   }
 
-  show() {
-
+  show({view}) {
+    return view.render('admin/inventory/show')
   }
 
-  edit() {
-
+  edit({view}) {
+    return view.render('admin/inventory/edit')
   }
 
   update() {
