@@ -16,4 +16,12 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+Route.get('/', 'PageController.index')
+
+Route.get('/admin/inventory', 'Admin/InventoryController.index')
+Route.post('/admin/inventory', 'Admin/InventoryController.store')
+Route.get('/admin/inventory/create', 'Admin/InventoryController.create')
+Route.get('/admin/inventory/:id', 'Admin/InventoryController.show')
+Route.get('/admin/inventory/:id/edit', 'Admin/InventoryController.edit')
+Route.put('/admin/inventory/:id/edit', 'Admin/InventoryController.update')
+Route.delete('/admin/inventory/:id/delete', 'Admin/InventoryController.delete')
