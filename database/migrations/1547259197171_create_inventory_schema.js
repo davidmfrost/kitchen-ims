@@ -10,16 +10,12 @@ class CreateInventorySchema extends Schema {
           PRIMARY KEY (inventory_id),
           inventory_id INT UNSIGNED  NOT NULL AUTO_INCREMENT,
           product_id   INT UNSIGNED  NOT NULL,
-          brand_id     INT UNSIGNED, NOT NULL,
           quantity     INT UNSIGNED  NOT NULL,
           created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
           updated_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
           CONSTRAINT   product_id
           FOREIGN KEY  (product_id)
           REFERENCES   product(product_id)
-          -- CONSTRAINT   brand_id
-          -- FOREIGN KEY  (brand_id)
-          -- REFERENCES   brand(brand_id)
       )
       `)
   }
