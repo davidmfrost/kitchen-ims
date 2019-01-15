@@ -17,13 +17,6 @@ class UserSchema extends Schema {
           updated_at TIMESTAMP    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
       )
       `)
-    // this.create('users', (table) => {
-    //   table.increments()
-    //   table.string('username', 80).notNullable().unique()
-    //   table.string('email', 254).notNullable().unique()
-    //   table.string('password', 60).notNullable()
-    //   table.timestamps()
-    // })
   }
 
   down () {

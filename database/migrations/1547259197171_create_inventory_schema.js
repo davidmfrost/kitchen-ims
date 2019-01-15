@@ -7,15 +7,15 @@ class CreateInventorySchema extends Schema {
   up () {
     this.raw(`
       CREATE TABLE inventory(
-          PRIMARY KEY (inventory_id),
-          inventory_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+          PRIMARY KEY (id),
+          id           INT UNSIGNED NOT NULL AUTO_INCREMENT,
           product_id   INT UNSIGNED NOT NULL,
+                       FOREIGN KEY (product_id)
+                       REFERENCES  product(id),
+
           quantity     INT UNSIGNED NOT NULL,
           created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-          updated_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-          CONSTRAINT   product_id
-          FOREIGN KEY  (product_id)
-          REFERENCES   product(product_id)
+          updated_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
       )
       `)
   }

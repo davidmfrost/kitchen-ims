@@ -3,13 +3,17 @@
 /** @type {import('@adonisjs/lucid/src/Schema')} */
 const Schema = use('Schema')
 
-class CreateBrandSchema extends Schema {
+class CreateInstructionSchema extends Schema {
   up () {
     this.raw(`
-      CREATE TABLE brand(
+      CREATE TABLE instruction(
           PRIMARY KEY (id),
           id          INT UNSIGNED  NOT NULL AUTO_INCREMENT,
-          name        VARCHAR(200)   NOT NULL,
+          recipe_id   INT UNSIGNED  NOT NULL,
+                      FOREIGN KEY   (recipe_id)
+                      REFERENCES    recipe(id),
+          step        INT UNSIGNED  NOT NULL,
+          title       VARCHAR(160)  NOT NULL,
           description TEXT,
           created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
           updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -19,9 +23,9 @@ class CreateBrandSchema extends Schema {
 
   down () {
     this.raw(`
-      DROP TABLE brand
+      DROP TABLE instruction
       `)
   }
 }
 
-module.exports = CreateBrandSchema
+module.exports = CreateInstructionSchema

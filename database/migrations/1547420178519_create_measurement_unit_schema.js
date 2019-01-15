@@ -8,6 +8,9 @@ class CreateMeasurementUnitSchema extends Schema {
     this.raw(`
       CREATE TABLE measurement_unit(
           ingredient_id INT UNSIGNED NOT NULL,
+                        FOREIGN KEY (ingredient_id)
+                        REFERENCES  ingredient(id),
+                        
           unit          VARCHAR(20)  NOT NULL,
           created_at    TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
           updated_at    TIMESTAMP    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP

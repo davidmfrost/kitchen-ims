@@ -7,8 +7,8 @@ class CreateRecipeSchema extends Schema {
   up () {
     this.raw(`
       CREATE TABLE recipe(
-          PRIMARY KEY (recipe_id),
-          recipe_id     INT UNSIGNED NOT NULL AUTO_INCREMENT,
+          PRIMARY KEY (id),
+          id            INT UNSIGNED NOT NULL AUTO_INCREMENT,
           name          VARCHAR(60)  NOT NULL,
           prep_time     INT UNSIGNED NOT NULL,
           cook_time     INT UNSIGNED NOT NULL,

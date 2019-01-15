@@ -7,8 +7,8 @@ class CreateProductSchema extends Schema {
   up () {
     this.raw(`
       CREATE TABLE product(
-          PRIMARY KEY (product_id),
-          product_id   INT UNSIGNED  NOT NULL AUTO_INCREMENT,
+          PRIMARY KEY (id),
+          id           INT UNSIGNED  NOT NULL AUTO_INCREMENT,
           name         VARCHAR(60)   NOT NULL,
           upc          INT UNSIGNED  NOT NULL,
           brand_id     INT UNSIGNED  NOT NULL,

@@ -10,7 +10,7 @@ class AddForeignKeyToProductSchema extends Schema {
         ALTER TABLE product
           ADD CONSTRAINT  brand_id
               FOREIGN KEY (brand_id)
-              REFERENCES  brand(brand_id)
+              REFERENCES  brand(id)
         `)
     })
   }

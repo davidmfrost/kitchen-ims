@@ -8,6 +8,9 @@ class CreateRecipeInstructionSchema extends Schema {
     this.raw(`
       CREATE TABLE recipe_instruction(
           recipe_id      INT UNSIGNED NOT NULL,
+                         FOREIGN KEY (recipe_id)
+                         REFERENCES  recipe(id),
+
           instruction_id INT UNSIGNED NOT NULL,
           created_at     TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
           updated_at     TIMESTAMP    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -16,7 +19,7 @@ class CreateRecipeInstructionSchema extends Schema {
   }
 
   down () {
-    this.drop('create_recipe_instructions')
+    this.drop('recipe_instruction')
   }
 }
 
