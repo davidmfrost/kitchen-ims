@@ -7,8 +7,6 @@ class CreateRecipeIngredientSchema extends Schema {
   up () {
     this.raw(`
       CREATE TABLE recipe_ingredient(
-          PRIMARY KEY (recipe_ingredient_id),
-          recipe_ingredient_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
           recipe_id            INT UNSIGNED NOT NULL,
           ingredient_id        INT UNSIGNED NOT NULL,
           created_at           TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,

@@ -13,8 +13,8 @@ class UserSchema extends Schema {
           last_name  VARCHAR(60)  NOT NULL,
           email      VARCHAR(60)  NOT NULL UNIQUE,
           birth_date DATE         NOT NULL,
-          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-          updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+          created_at TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
+          updated_at TIMESTAMP    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
       )
       `)
     // this.create('users', (table) => {

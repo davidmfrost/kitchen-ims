@@ -8,9 +8,9 @@ class CreateInventorySchema extends Schema {
     this.raw(`
       CREATE TABLE inventory(
           PRIMARY KEY (inventory_id),
-          inventory_id INT UNSIGNED  NOT NULL AUTO_INCREMENT,
-          product_id   INT UNSIGNED  NOT NULL,
-          quantity     INT UNSIGNED  NOT NULL,
+          inventory_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+          product_id   INT UNSIGNED NOT NULL,
+          quantity     INT UNSIGNED NOT NULL,
           created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
           updated_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
           CONSTRAINT   product_id

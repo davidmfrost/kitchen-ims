@@ -5,10 +5,14 @@ const Schema = use('Schema')
 
 class CreateRecipeInstructionSchema extends Schema {
   up () {
-    this.create('create_recipe_instructions', (table) => {
-      table.increments()
-      table.timestamps()
-    })
+    this.raw(`
+      CREATE TABLE recipe_instruction(
+          recipe_id      INT UNSIGNED NOT NULL,
+          instruction_id INT UNSIGNED NOT NULL,
+          created_at     TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
+          updated_at     TIMESTAMP    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+      )
+      `)
   }
 
   down () {
