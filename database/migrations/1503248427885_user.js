@@ -6,7 +6,7 @@ const Schema = use('Schema')
 class UserSchema extends Schema {
   up () {
     this.raw(`
-      CREATE TABLE users(
+      CREATE TABLE user(
           PRIMARY KEY (id),
           id         INT UNSIGNED NOT NULL AUTO_INCREMENT,
           first_name VARCHAR(60)  NOT NULL,
@@ -21,7 +21,7 @@ class UserSchema extends Schema {
 
   down () {
     this.raw(`
-      DROP TABLE users
+      DROP TABLE user
       `)
   }
 }

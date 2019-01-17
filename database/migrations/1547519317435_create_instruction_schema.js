@@ -9,9 +9,6 @@ class CreateInstructionSchema extends Schema {
       CREATE TABLE instruction(
           PRIMARY KEY (id),
           id          INT UNSIGNED  NOT NULL AUTO_INCREMENT,
-          recipe_id   INT UNSIGNED  NOT NULL,
-                      FOREIGN KEY   (recipe_id)
-                      REFERENCES    recipe(id),
           step        INT UNSIGNED  NOT NULL,
           title       VARCHAR(160)  NOT NULL,
           description TEXT,

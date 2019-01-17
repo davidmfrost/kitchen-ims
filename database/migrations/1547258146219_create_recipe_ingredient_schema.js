@@ -10,11 +10,9 @@ class CreateRecipeIngredientSchema extends Schema {
           recipe_id     INT UNSIGNED NOT NULL,
                         FOREIGN KEY (recipe_id)
                         REFERENCES  recipe(id),
-
           ingredient_id INT UNSIGNED NOT NULL,
                         FOREIGN KEY (ingredient_id)
                         REFERENCES  ingredient(id),
-
           created_at    TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
           updated_at    TIMESTAMP    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
       )
