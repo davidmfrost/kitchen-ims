@@ -8,10 +8,11 @@ class CreateIngredientSchema extends Schema {
     this.raw(`
       CREATE TABLE ingredient(
           PRIMARY KEY (id),
-          id            INT UNSIGNED NOT NULL AUTO_INCREMENT,
-          name          VARCHAR(60)  NOT NULL,
-          created_at    TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
-          updated_at    TIMESTAMP    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+          id            INT UNSIGNED   NOT NULL AUTO_INCREMENT,
+          name          VARCHAR(60)    NOT NULL,
+          quantity      FLOAT UNSIGNED NOT NULL,
+          created_at    TIMESTAMP      DEFAULT CURRENT_TIMESTAMP,
+          updated_at    TIMESTAMP      DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
       )
       `)
   }
