@@ -1,0 +1,52 @@
+@layout('layouts.admin')
+
+@section('breadcrumbs')
+  <div class="breadcrumbs-area clearfix">
+    <h4 class="page-title pull-left">Inventory</h4>
+    <ul class="breadcrumbs pull-left">
+      <li><a href="/admin">Dashboard</a></li>
+      <li><a href="/admin/product">All Items</a></li>
+      <li><span>Create New Item</span></li>
+    </ul>
+  </div>
+@endsection
+
+@section('content')
+  <div class="row">
+    <div class="col-12 mt-5">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="header-title">Textual inputs</h4>
+          <p class="text-muted font-14 mb-4">Here are examples of <code>.form-control</code> applied to each textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p>
+          <div class="form-group row">
+            <div class="col-sm-12 col-md-6">
+              <label for="example-text-input" class="col-form-label">UPC</label>
+              <input class="form-control" type="text" value="" name="upc" id="example-text-input">
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <label for="example-text-input" class="col-form-label">Product Name</label>
+              <input class="form-control" type="text" value="" name="name" id="example-text-input">
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <label for="example-text-input" class="col-form-label">Brand Name</label>
+              <input class="form-control" type="text" value="" name="name" id="example-text-input">
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <label class="col-form-label">Manufacturer</label>
+              <select class="custom-select">
+                  <option selected="selected">Unknown</option>
+                  <option value="1">Mt. Olive Pickle Company, Inc.</option>
+                  <option value="2">Del Monte Foods</option>
+                  <option value="3"></option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-form-label">Description</label>
+            <textarea for="example-text-input" class="form-control col-form-label"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+@endsection
