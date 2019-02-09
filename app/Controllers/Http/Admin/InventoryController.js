@@ -5,8 +5,13 @@ class InventoryController {
     return view.render('admin/inventory/all')
   }
 
-  store() {
-
+  store({request, response}) {
+    const post = request.post()
+    Database.raw(`
+      INSERT INTO product (upc, name, description)
+      VALUES (${post.upc}, ${post.name}, ${post.description})
+      `).then(response => console.log(response) )
+    return 'Item Added'
   }
 
   create({view}) {

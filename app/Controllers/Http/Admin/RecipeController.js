@@ -5,8 +5,13 @@ class RecipeController {
     return view.render('admin/recipe/all')
   }
 
-  store() {
-
+  store({request, response}) {
+    const post = request.post()
+    Database.raw(`
+      INSERT INTO product (upc, name, description)
+      VALUES (${post.upc}, ${post.name}, ${post.description})
+      `).then(response => console.log(response) )
+    return 'Recipe Added'
   }
 
   create({view}) {
